@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced AI for L&D Professionals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#e72582',
+                            grey: '#abb5bf',
+                            navy: '#1f2a52',
+                            teal: '#00bec7',
+                            lightBlue: '#d2f0f0',
+                            slate: '#2e4d6b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tab-active {
+            background-color: #1f2a52;
+            color: white;
+            border-color: #1f2a52;
+        }
+        .tab-inactive {
+            background-color: transparent;
+            color: #2e4d6b;
+            border-color: #abb5bf;
+        }
+        .tab-inactive:hover {
+            background-color: #d2f0f0;
+            color: #1f2a52;
+        }
+        .fade-in {
+            animation: fadeIn 0.35s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-brand-navy min-h-screen font-sans">
+
+    <!-- Header -->
+    <header class="bg-brand-navy text-white py-12 px-6 shadow-md border-b-4 border-brand-pink relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-brand-pink text-white font-bold py-2 px-8 rounded-bl-xl shadow-lg uppercase tracking-widest text-sm z-10">
+            5-Week Programme
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Advanced AI for L&D Professionals</h1>
+            <p class="text-xl text-brand-lightBlue max-w-4xl mb-6">
+                Develop expertise in advanced AI applications for L&D processes and workflows. Move beyond foundational prompts to become a strategic architect of intelligent, scalable, and personalised learning systems.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 max-w-5xl">
+                <div class="bg-white/10 border border-brand-teal rounded-lg p-4">
+                    <p class="text-sm uppercase tracking-wide text-brand-teal font-bold mb-1">Delivery</p>
+                    <p class="text-sm text-white">5 weeks total (8 hours). Alternating 2-hour instruction and 1-hour coaching sessions.</p>
+                </div>
+                <div class="bg-white/10 border border-brand-teal rounded-lg p-4">
+                    <p class="text-sm uppercase tracking-wide text-brand-teal font-bold mb-1">Audience</p>
+                    <p class="text-sm text-white">L&D, HR, and OD professionals, instructional designers, and training managers.</p>
+                </div>
+                <div class="bg-white/10 border border-brand-teal rounded-lg p-4">
+                    <p class="text-sm uppercase tracking-wide text-brand-teal font-bold mb-1">Prerequisite</p>
+                    <p class="text-sm text-white">Designed for professionals who regularly use AI to design, develop, and implement learning.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-6xl mx-auto px-6 py-12">
+
+        <!-- Intro & Takeaways -->
+        <section class="mb-12 text-center">
+            <h2 class="text-3xl font-bold text-brand-navy mb-3">Elevate your L&D capability</h2>
+            <p class="text-brand-slate max-w-4xl mx-auto mb-8">
+                This platform-agnostic course is vital for professionals ready to automate complex workflows and ensure the ethical governance of AI. You will learn to directly increase your efficiency and the measurable impact of your L&D function.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <div class="w-12 h-12 bg-brand-lightBlue rounded-full flex items-center justify-center text-brand-teal font-bold text-xl mb-4">1</div>
+                    <h3 class="font-bold text-brand-navy mb-2">Strategic & Ethical Integration</h3>
+                    <p class="text-sm text-brand-slate">Apply an AI framework that includes essential ethical considerations and governance practices, preparing you to lead AI implementation responsibly.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <div class="w-12 h-12 bg-brand-pink/20 rounded-full flex items-center justify-center text-brand-pink font-bold text-xl mb-4">2</div>
+                    <h3 class="font-bold text-brand-navy mb-2">Practical Workflow Application</h3>
+                    <p class="text-sm text-brand-slate">Optimise your instructional design workflows by leveraging the 'AI Sandwich' to rapidly build high-value learning assets, interactive dashboards, and custom AI agents.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-brand-slate font-bold text-xl mb-4">3</div>
+                    <h3 class="font-bold text-brand-navy mb-2">Learning at Scale</h3>
+                    <p class="text-sm text-brand-slate">Incorporate learning at scale by designing AI-adaptive learning environments, building internal champion networks, and exploring diverse learning ecosystems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs -->
+        <div class="flex flex-col md:flex-row gap-2 mb-8 items-stretch relative">
+            <button onclick="switchTab('course1')" id="tab-course1" class="tab-active flex-1 py-4 px-6 text-center font-bold rounded-lg border-2 transition-all duration-200 shadow-sm relative">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-teal text-white text-xs px-3 py-1 rounded-full font-bold">Weeks 1 & 2</div>
+                Strategy, Prompts & Coaching<br><span class="text-xs font-normal opacity-90">Building your foundation</span>
+            </button>
+
+            <button onclick="switchTab('course2')" id="tab-course2" class="tab-inactive flex-1 py-4 px-6 text-center font-bold rounded-lg border-2 transition-all duration-200 shadow-sm relative">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-pink text-white text-xs px-3 py-1 rounded-full font-bold">Weeks 3 & 4</div>
+                Workflows & Coaching<br><span class="text-xs font-normal opacity-90">Agents, dashboards, and guides</span>
+            </button>
+
+            <button onclick="switchTab('course3')" id="tab-course3" class="tab-inactive flex-1 py-4 px-6 text-center font-bold rounded-lg border-2 transition-all duration-200 shadow-sm relative">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-slate text-white text-xs px-3 py-1 rounded-full font-bold">Week 5</div>
+                Learning at Scale<br><span class="text-xs font-normal opacity-90">Ecosystems & champion networks</span>
+            </button>
+        </div>
+
+        <!-- COURSE 1 -->
+        <div id="content-course1" class="fade-in block">
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-brand-lightBlue py-6 px-8 border-b border-gray-200">
+                    <h2 class="text-2xl font-bold text-brand-navy">Weeks 1 & 2: AI Strategy, Prompts and Coaching</h2>
+                    <p class="text-brand-slate mt-1 font-medium text-sm">Set the strategic baseline for AI capability and get tailored support for your organisational challenges.</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-brand-teal">
+                            <span class="text-sm font-bold tracking-wider text-brand-teal uppercase block mb-2">Week 1 (2 Hours)</span>
+                            <h3 class="text-lg font-bold text-brand-navy mb-3">AI Capability, Strategy and Frameworks</h3>
+                            <ul class="space-y-2 text-sm text-brand-slate">
+                                <li>• Examine AI capability against your organisation's existing policies, strategies, and governance frameworks.</li>
+                                <li>• Define the strategic role of L&D in supporting and driving an enterprise-wide AI uplift.</li>
+                                <li>• Understand AI capability skills and how they align with the AITD Capability Framework.</li>
+                                <li>• <strong>The Juggernaut Challenge:</strong> Identify a real-world L&D problem to solve across the duration of the course.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-brand-navy rounded-lg p-6 border-l-4 border-brand-teal text-white">
+                            <span class="inline-block bg-brand-teal text-brand-navy text-xs px-2 py-1 rounded font-bold mb-3">Interactive Session</span>
+                            <span class="text-sm font-bold tracking-wider text-brand-teal uppercase block mb-2">Week 2 (1 Hour)</span>
+                            <h3 class="text-lg font-bold text-white mb-3">Coaching – 'Ask me anything'</h3>
+                            <ul class="space-y-2 text-sm text-brand-lightBlue">
+                                <li>• Bring your specific workflow and strategy challenges to a live, open-forum coaching session.</li>
+                                <li>• Troubleshoot early prompt designs and discuss aligning them with your frameworks.</li>
+                                <li>• Share platform-specific queries (Copilot, ChatGPT, or Gemini).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COURSE 2 -->
+        <div id="content-course2" class="fade-in hidden">
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-brand-lightBlue py-6 px-8 border-b border-gray-200">
+                    <h2 class="text-2xl font-bold text-brand-navy">Weeks 3 & 4: AI Workflows, ID and Coaching</h2>
+                    <p class="text-brand-slate mt-1 font-medium text-sm">Learn to streamline your instructional design process and build practical, high-value assets using a variety of AI tools.</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-brand-pink">
+                            <span class="text-sm font-bold tracking-wider text-brand-pink uppercase block mb-2">Week 3 (2 Hours)</span>
+                            <h3 class="text-lg font-bold text-brand-navy mb-3">Creating Assets and Value Drops</h3>
+                            <ul class="space-y-2 text-sm text-brand-slate">
+                                <li>• <strong>The AI Sandwich:</strong> Integrate AI seamlessly into your instructional design workflows to accelerate development and improve output quality.</li>
+                                <li>• <strong>Asset Creation:</strong> Use a variety of Gen AI tools to rapidly produce high-value learning drops, including quick reference guides, job aids, and multimedia content.</li>
+                                <li>• <strong>Interactive Tools & Agents:</strong> Apply basic HTML and advanced prompting to build functional dashboards and deploy custom AI agents.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-brand-navy rounded-lg p-6 border-l-4 border-brand-pink text-white">
+                            <span class="inline-block bg-brand-pink text-white text-xs px-2 py-1 rounded font-bold mb-3">Interactive Session</span>
+                            <span class="text-sm font-bold tracking-wider text-brand-pink uppercase block mb-2">Week 4 (1 Hour)</span>
+                            <h3 class="text-lg font-bold text-white mb-3">Coaching – 'Ask me anything'</h3>
+                            <ul class="space-y-2 text-sm text-brand-lightBlue">
+                                <li>• Dedicated time to refine the assets and agents you built in Week 3.</li>
+                                <li>• Peer review and expert feedback on your instructional design workflows.</li>
+                                <li>• Overcome technical hurdles encountered while developing HTML dashboards or value drops.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COURSE 3 -->
+        <div id="content-course3" class="fade-in hidden">
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-brand-lightBlue py-6 px-8 border-b border-gray-200">
+                    <h2 class="text-2xl font-bold text-brand-navy">Week 5: Learning at Scale and Adaptive Environments</h2>
+                    <p class="text-brand-slate mt-1 font-medium text-sm">Shift your focus to enterprise-wide impact, champion networks, and building sustainable learning ecosystems.</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-brand-slate">
+                            <span class="text-sm font-bold tracking-wider text-brand-slate uppercase block mb-2">Week 5 (2 Hours)</span>
+                            <h3 class="text-lg font-bold text-brand-navy mb-3">Ecosystems and Champion Networks</h3>
+                            <ul class="space-y-3 text-sm text-brand-slate">
+                                <li><strong>Learning at Scale:</strong> Discover strategies for incorporating AI to support wide-scale learning initiatives across the organisation.</li>
+                                <li><strong>Champion Networks:</strong> Learn how to identify, build, and nurture internal champion networks to drive AI adoption and provide peer support.</li>
+                                <li><strong>Adaptive Ecosystems:</strong> Foster lifelong learning through supportive, AI-adaptive environments and explore different learning ecosystem models tailored to your business.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-brand-navy rounded-lg p-6 border-l-4 border-brand-slate text-white">
+                            <span class="inline-block bg-brand-slate text-white text-xs px-2 py-1 rounded font-bold mb-3">Final Presentation</span>
+                            <span class="text-sm font-bold tracking-wider text-brand-slate uppercase block mb-2">Week 5 (Showcase)</span>
+                            <h3 class="text-lg font-bold text-white mb-3">The Juggernaut Challenge</h3>
+                            <ul class="space-y-2 text-sm text-brand-lightBlue">
+                                <li>• Present your practical, AI-enabled workflow, agent, or learning asset prototype to the cohort.</li>
+                                <li>• Detail how your solution scales within your broader learning ecosystem.</li>
+                                <li>• Receive constructive peer and expert feedback to refine your implementation strategy.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Juggernaut Challenge -->
+        <section class="mt-16 bg-brand-navy rounded-2xl overflow-hidden shadow-2xl">
+            <div class="grid md:grid-cols-3">
+                <div class="bg-brand-teal p-8 md:col-span-1 flex flex-col justify-center border-r border-white/10">
+                    <h3 class="text-2xl font-bold text-white mb-2">The Juggernaut Challenge</h3>
+                    <p class="text-brand-navy font-bold mb-4 bg-brand-lightBlue py-1 px-3 rounded inline-block">Course-long Project</p>
+                    <p class="text-white text-sm">
+                        Rather than completing separate, disjointed tasks each week, you will develop one continuous, workplace-based project across the 5 weeks. This ensures you leave with a highly relevant, practical, and ready-to-implement AI solution.
+                    </p>
+                </div>
+                <div class="p-8 md:col-span-2 text-white bg-brand-navy">
+                    <div class="space-y-6">
+                        <div class="flex p-4 rounded-lg bg-white/5 border border-brand-teal/30">
+                            <div class="flex-shrink-0 w-16 text-brand-teal font-bold text-xl flex flex-col items-center justify-center border-r border-white/20 mr-4 pr-4">
+                                <span>Wks</span>
+                                <span class="text-3xl">1-2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Define the Challenge</h4>
+                                <p class="text-brand-grey text-sm mt-1">Identify a specific L&D bottleneck or strategic opportunity in your organisation that can be solved using advanced AI capabilities.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex p-4 rounded-lg bg-white/5 border border-brand-pink/30">
+                            <div class="flex-shrink-0 w-16 text-brand-pink font-bold text-xl flex flex-col items-center justify-center border-r border-white/20 mr-4 pr-4">
+                                <span>Wks</span>
+                                <span class="text-3xl">3-4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Build the Solution</h4>
+                                <p class="text-brand-grey text-sm mt-1">Apply your new workflow skills, the 'AI Sandwich', and interactive tools to prototype your custom AI agent, dashboard, or learning asset.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex p-4 rounded-lg bg-white/5 border border-brand-lightBlue/30">
+                            <div class="flex-shrink-0 w-16 text-brand-lightBlue font-bold text-xl flex flex-col items-center justify-center border-r border-white/20 mr-4 pr-4">
+                                <span>Wk</span>
+                                <span class="text-3xl">5</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Present & Scale</h4>
+                                <p class="text-brand-grey text-sm mt-1">Showcase your solution to the cohort, demonstrate how it fits into your learning ecosystem, and gather peer feedback for final refinement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Presenter Profile -->
+        <section class="mt-16 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-brand-navy mb-6 text-center">Meet Your Presenter</h3>
+            <div class="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
+                <div class="w-48 h-48 flex-shrink-0">
+                    <!-- Placeholder for Kathryn's headshot -->
+                    <div class="w-full h-full rounded-full bg-gray-200 border-4 border-brand-teal flex items-center justify-center text-gray-400 overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-brand-navy">Kathryn McGilvray</h4>
+                    <p class="text-brand-pink font-bold mb-3">Managing Director, eLearning Educational Solutions Pty Ltd</p>
+                    <p class="text-brand-slate text-sm mb-4 leading-relaxed">
+                        Kathryn is an experienced L&D professional, deeply knowledgeable in online learning and Generative AI. She passionately shares strategic and practical insights, empowering the creation of innovative eLearning and the implementation of AI-driven solutions for real-world L&D workflows. As a Certified Management Consultant and LMS expert, she delivers valuable guidance to organisations globally. Kathryn is a certified Google Gemini Academy and Google for Education professional, and a frequent presenter at international conferences, sharing her enthusiasm for cutting-edge educational technology.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/in/kathryn-mcgilvray/" target="_blank" class="text-brand-teal hover:text-brand-navy text-sm font-bold transition-colors">Connect on LinkedIn &rarr;</a>
+                        <a href="http://www.eles.com.au" target="_blank" class="text-brand-teal hover:text-brand-navy text-sm font-bold transition-colors">Visit Website &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function switchTab(tabId) {
+            const tabs = ['course1', 'course2', 'course3'];
+
+            tabs.forEach(id => {
+                const btn = document.getElementById(`tab-${id}`);
+                btn.classList.remove('tab-active');
+                btn.classList.add('tab-inactive');
+
+                const content = document.getElementById(`content-${id}`);
+                content.classList.remove('block');
+                content.classList.add('hidden');
+            });
+
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.remove('tab-inactive');
+            activeBtn.classList.add('tab-active');
+
+            const activeContent = document.getElementById(`content-${tabId}`);
+            activeContent.classList.remove('hidden');
+            activeContent.classList.add('block');
+        }
+    </script>
+</body>
+</html>
